@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ค้นหาหัวข้อธรรมะ</title>
+  <meta name="description" content="หน้าค้นหาหัวข้อธรรมะจากหมวดต่าง ๆ ของเว็บไซต์พระไตรปิฎก เพื่อเข้าถึงเนื้อหาได้สะดวกและรวดเร็ว">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://dhamsutta.github.io/tripitaka/search.html">
+  <style>
+    body { font-family: 'Sarabun', sans-serif; max-width: 800px; margin: auto; padding: 2rem; line-height: 1.8; }
+    h1 { color: #444; }
+    input[type="text"] { width: 100%; padding: 0.5rem; font-size: 1rem; margin-bottom: 1rem; }
+    ul { padding-left: 1.2em; }
+    li { margin-bottom: 0.5em; }
+    a { color: #0066cc; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <script>
+    function searchTopics() {
+      const input = document.getElementById("searchBox").value.toLowerCase();
+      const items = document.querySelectorAll("ul li");
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(input) ? "list-item" : "none";
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>ค้นหาหัวข้อธรรมะ</h1>
+  <input type="text" id="searchBox" onkeyup="searchTopics()" placeholder="พิมพ์คำค้น เช่น จิต 89 ดวง, อริยสัจ 4 ...">
+
+  <ul>
+    <li><a href="pitaka/abhidhamma.html">จิต 89 ดวง</a></li>
+    <li><a href="atthakatha/vissudhimagga.html">ศีล สมาธิ ปัญญา</a></li>
+    <li><a href="dictionary/pali-thai.html">ศัพท์บาลี: อนัตตา</a></li>
+    <li><a href="audio/index.html">เสียงธรรมเรื่อง อริยสัจ 4</a></li>
+    <li><a href="asubha/index.html">เจริญอสุภสัญญา</a></li>
+  </ul>
+
+  <p><a href="index.html">← กลับหน้าแรก</a></p>
+</body>
+</html>
