@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhamsutta.github.io/tripitaka/sitemap.xml
