@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/pitaka/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/pitaka/abhidhamma.html</loc>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/atthakatha/vissudhimagga.html</loc>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/audio/</loc>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/asubha/</loc>
+  </url>
+  <url>
+    <loc>https://dhamsutta.github.io/tripitaka/search.html</loc>
+  </url>
+</urlset>
