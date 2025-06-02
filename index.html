@@ -1,284 +1,109 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRZ11970FJ"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRZ11970FJ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  gtag('config', 'G-HRZ11970FJ');
+  gtag('config', 'G-HRZ11970FJ');
 </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>หน้าแรก - ไตรปิฎก</title>
-  <meta name="description" content="ศูนย์รวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา อภิธรรม และธรรมบรรยาย">
-  <meta name="keywords" content="ไตรปิฎก, พระวินัย, พระสูตร, พระอภิธรรม, ธรรมะ, พุทธศาสนา">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dhamsutta.github.io/tripitaka/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าแรก - ไตรปิฎก</title>
+  <meta name="description" content="ศูนย์รวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา อภิธรรม และธรรมบรรยาย">
+  <meta name="keywords" content="ไตรปิฎก, พระวินัย, พระสูตร, พระอภิธรรม, ธรรมะ, พุทธศาสนา">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dhamsutta.github.io/tripitaka/">
 
-    <meta property="og:title" content="ไตรปิฎก - ศูนย์รวมพระธรรมคำสอน">
-  <meta property="og:description" content="ศึกษาธรรมะจากพระไตรปิฎก อรรถกถา และอภิธรรม">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dhamsutta.github.io/tripitaka/">
-  <meta property="og:image" content="https://dhamsutta.github.io/tripitaka/assets/og-image.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="ไตรปิฎก - ศูนย์รวมพระธรรมคำสอน">
+  <meta property="og:description" content="ศึกษาธรรมะจากพระไตรปิฎก อรรถกถา และอภิธรรม">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dhamsutta.github.io/tripitaka/">
+  <meta property="og:image" content="https://dhamsutta.github.io/tripitaka/assets/og-image.jpg">
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ไตรปิฎก",
-    "url": "https://dhamsutta.github.io/tripitaka/",
-    "inLanguage": "th",
-    "description": "ศูนย์รวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา และอภิธรรม"
-  }
-  </script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ไตรปิฎก",
+    "url": "https://dhamsutta.github.io/tripitaka/",
+    "inLanguage": "th",
+    "description": "ศูนย์รวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา และอภิธรรม"
+  }
+  </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Sarabun', sans-serif;
-      margin: 0;
-      line-height: 1.7;
-      background: #f8f8f8;
-      color: #333;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007bff;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 2rem 0;
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    header h1 {
-      color: #2a6a57; /* Darker green */
-      margin: 0;
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      color: #666;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Navigation */
-    nav {
-      background: #2a6a57; /* Darker green */
-      padding: 0.8rem 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky; /* Make navigation sticky */
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav a {
-      color: #ffffff; /* White text for main nav links */
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      display: block;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #3e8e76; /* Slightly lighter green on hover */
-      text-decoration: none;
-    }
-
-    /* Dropdown Menus */
-    nav li ul {
-      display: none;
-      position: absolute;
-      top: 100%; /* Position below the parent link */
-      left: 0;
-      background: #3e8e76; /* Green for dropdown background */
-      padding: 0.5rem 0;
-      border-radius: 8px;
-      min-width: 180px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1001; /* Ensure dropdown is above other content */
-    }
-
-    nav li:hover ul {
-      display: block;
-    }
-
-    nav li ul li {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    nav li ul li:last-child {
-      border-bottom: none;
-    }
-
-    nav li ul a {
-      color: #ffffff; /* White text for dropdown links */
-      padding: 0.8rem 1.2rem;
-      font-weight: normal;
-      font-size: 0.95rem;
-      transition: background-color 0.2s ease, padding-left 0.2s ease;
-    }
-
-    nav li ul a:hover {
-      background-color: #4CAF50; /* Lighter green on dropdown hover */
-      padding-left: 1.5rem;
-    }
-
-    /* Main Content */
-    .welcome-section {
-      background: #ffffff;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .welcome-section p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    .quick-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .quick-links a {
-      background: #ffffff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.15rem;
-      font-weight: bold;
-      color: #2a6a57; /* Darker green */
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .quick-links a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      text-decoration: none;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-      color: #777;
-      font-size: 0.9rem;
-      border-top: 1px solid #eee;
-    }
-  </style>
+  <style>
+    body { font-family: 'Sarabun', sans-serif; margin: 2rem auto; max-width: 900px; line-height: 1.8; background: #fff; color: #222; padding: 1rem; }
+    nav { background: #f5f5f5; padding: 1rem; border-radius: 10px; }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 1rem; }
+    nav li { position: relative; }
+    nav li ul { display: none; position: absolute; top: 100%; left: 0; background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 8px; }
+    nav li:hover ul { display: block; }
+    nav a { text-decoration: none; color: #0066cc; font-weight: bold; }
+    h1 { color: #444; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>ไตรปิฎก - ศูนย์รวมพระธรรมคำสอน</h1>
-      <p>ศึกษาและปฏิบัติธรรมจากพระไตรปิฎก อรรถกถา และคัมภีร์สำคัญทางพระพุทธศาสนา</p>
-    </div>
-  </header>
+  <header>
+    <h1>ไตรปิฎก - ศูนย์รวมพระธรรมคำสอน</h1>
+  </header>
 
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="index.html">🏠 หน้าแรก</a></li>
-        <li>
-          <a href="#">📚 พระไตรปิฎก ▾</a>
-          <ul>
-            <li><a href="pitaka/vinaya.html">พระวินัย</a></li>
-            <li><a href="pitaka/sutta.html">พระสูตร</a></li>
-            <li><a href="pitaka/abhidhamma.html">พระอภิธรรม</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">👤 อรรถกถา ▾</a>
-          <ul>
-            <li><a href="atthakatha/vissudhimagga.html">วิสุทธิมรรค</a></li>
-            <li><a href="atthakatha/nettipakarana.html">เนตติปกรณ์</a></li>
-            <li><a href="atthakatha/buddhadhamma.html">พุทธธรรม</a></li>
-            <li><a href="atthakatha/milindapanha.html">มิลินทปัญหา</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">📖 อภิธานศัพท์ ▾</a>
-          <ul>
-            <li><a href="dictionary/pali-thai.html">บาลี-ไทย</a></li>
-            <li><a href="dictionary/thai-eng.html">ไทย-อังกฤษ</a></li>
-            <li><a href="dictionary/eng-thai.html">อังกฤษ-ไทย</a></li>
-          </ul>
-        </li>
-        <li><a href="misc/collection.html">🔔 ปกิณกะ</a></li>
-        <li><a href="misc/audio.html">📻 ธรรมบรรยาย</a></li>
-        <li><a href="misc/asubha.html">🕯️ ห้องปลงอสุภะ</a></li>
-        <li><a href="search.html">🔍 ค้นหาหัวข้อ</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 หน้าแรก</a></li>
+      <li>
+        <a href="#">📚 พระไตรปิฎก ▾</a>
+        <ul>
+          <li><a href="pitaka/vinaya.html">พระวินัย</a></li>
+          <li><a href="pitaka/sutta.html">พระสูตร</a></li>
+          <li><a href="pitaka/abhidhamma.html">พระอภิธรรม</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">👤 อรรถกถา ▾</a>
+        <ul>
+          <li><a href="atthakatha/vissudhimagga.html">วิสุทธิมรรค</a></li>
+          <li><a href="atthakatha/nettipakarana.html">เนตติปกรณ์</a></li>
+          <li><a href="atthakatha/buddhadhamma.html">พุทธธรรม</a></li>
+          <li><a href="atthakatha/milindapanha.html">มิลินทปัญหา</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">📖 อภิธานศัพท์ ▾</a>
+        <ul>
+          <li><a href="dictionary/pali-thai.html">บาลี-ไทย</a></li>
+          <li><a href="dictionary/thai-eng.html">ไทย-อังกฤษ</a></li>
+          <li><a href="dictionary/eng-thai.html">อังกฤษ-ไทย</a></li>
+        </ul>
+      </li>
+      <li><a href="misc/collection.html">🔔 ปกิณกะ</a></li>
+      <li><a href="misc/audio.html">📻 ธรรมบรรยาย</a></li>
+      <li><a href="misc/asubha.html">🕯️ ห้องปลงอสุภะ</a></li>
+      <li><a href="search.html">🔍 ค้นหาหัวข้อ</a></li>
+    </ul>
+  </nav>
 
-  <main class="container">
-    <section class="welcome-section">
-      <p>ยินดีต้อนรับสู่เว็บไซต์ <strong>ไตรปิฎก</strong> แหล่งรวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา และคัมภีร์สำคัญทางพระพุทธศาสนา เพื่อการศึกษาและปฏิบัติธรรมอย่างถูกต้องและลึกซึ้ง</p>
-    </section>
+  <main>
+    <p>ยินดีต้อนรับสู่เว็บไซต์ <strong>ไตรปิฎก</strong> แหล่งรวมพระธรรมคำสอนจากพระไตรปิฎก อรรถกถา และคัมภีร์สำคัญทางพระพุทธศาสนา เพื่อการศึกษาและปฏิบัติธรรมอย่างถูกต้องและลึกซึ้ง</p>
+    <ul>
+      <li><a href="pitaka/index.html">📚 เข้าสู่หมวดพระไตรปิฎก</a></li>
+      <li><a href="atthakatha/index.html">👤 เข้าสู่หมวดอรรถกถา</a></li>
+      <li><a href="dictionary/index.html">📖 เข้าสู่หมวดอภิธานศัพท์</a></li>
+      <li><a href="misc/collection.html">🔔 ปกิณกะ ธรรมะทั่วไป</a></li>
+      <li><a href="misc/audio.html">📻 ฟังธรรมบรรยาย</a></li>
+      <li><a href="misc/asubha.html">🕯️ ห้องปลงอสุภะ</a></li>
+      <li><a href="search.html">🔍 ค้นหาหัวข้อในเว็บ</a></li>
+    </ul>
+  </main>
 
-    <section class="quick-links">
-      <a href="pitaka/index.html">📚 เข้าสู่หมวดพระไตรปิฎก</a>
-      <a href="atthakatha/index.html">👤 เข้าสู่หมวดอรรถกถา</a>
-      <a href="dictionary/index.html">📖 เข้าสู่หมวดอภิธานศัพท์</a>
-      <a href="misc/collection.html">🔔 ปกิณกะ ธรรมะทั่วไป</a>
-      <a href="misc/audio.html">📻 ฟังธรรมบรรยาย</a>
-      <a href="misc/asubha.html">🕯️ ห้องปลงอสุภะ</a>
-      <a href="search.html">🔍 ค้นหาหัวข้อในเว็บ</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Dhamsutta | เผยแผ่ธรรมะเพื่อประโยชน์สุขแห่งมหาชน</p>
-    </div>
-  </footer>
+  <footer>
+    <p>© 2025 Dhamsutta | เผยแผ่ธรรมะเพื่อประโยชน์สุขแห่งมหาชน</p>
+  </footer>
 </body>
 </html>
