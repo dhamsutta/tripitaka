@@ -1,0 +1,168 @@
+<style>
+/* CSS เฉพาะสำหรับ Custom Sidebar Menu นี้ */
+.custom-menu {
+  background: #FFF8DC; /* Cornsilk */
+  border: 1px solid #8B4513; /* SaddleBrown */
+  padding: 12px;
+  border-radius: 10px;
+  font-family: "TH Sarabun New", "Bai Jamjuree", sans-serif; /* TH Sarabun New เป็นหลัก, Bai Jamjuree เป็นสำรอง */
+}
+
+.custom-menu h3 { /* เผื่อคุณต้องการใส่หัวข้อย่อยภายในเมนูนี้ */
+  color: #8B4513;
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.custom-menu .main-menu,
+.custom-menu .sub-menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.custom-menu .main-menu li {
+  margin-bottom: 6px;
+}
+
+.custom-menu .main-menu > li > a { /* > li > a เพื่อให้สไตล์เฉพาะลิงก์ระดับแรก */
+  color: #5A3E1B;
+  text-decoration: none;
+  font-size: 22px;
+  display: block;
+  padding: 5px 8px; /* เพิ่ม padding ให้คลิกง่าย */
+  border-radius: 3px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-menu .main-menu > li > a:hover {
+  text-decoration: none; /* เอาขีดเส้นใต้ออกเมื่อ hover เพราะมีพื้นหลังแล้ว */
+  background-color: #f0e6d0;
+}
+
+.custom-menu .sub-menu {
+  display: none; /* เริ่มต้นด้วยการซ่อน */
+  margin-left: 20px;
+  margin-top: 5px;
+  padding-left: 10px;
+  border-left: 2px solid #D2B48C; /* เส้นประดับด้านซ้ายของ sub-menu */
+}
+
+/* เมื่อเมนูย่อยถูกขยาย (เพิ่มคลาส .submenu-active โดย JavaScript) */
+.custom-menu .sub-menu.submenu-active {
+    display: block; /* ทำให้มองเห็น */
+    /* พื้นหลังสีเหลืองและตัวอักษรดำ จะถูกกำหนดโดย JavaScript หรือ CSS ที่ซับซ้อนกว่านี้
+       สำหรับตอนนี้ เน้นให้มันแสดงผลและทำงานก่อนนะครับ
+       แต่ถ้าต้องการให้พื้นหลังเหลืองเลย อาจจะเพิ่มที่นี่:
+       background-color: #FFFFE0;
+    */
+}
+
+.custom-menu .sub-menu li a {
+    font-size: 20px; /* ขนาดฟอนต์ของ sub-menu */
+    color: #5A3E1B; /* สีเดียวกับเมนูหลัก หรือปรับตามชอบ */
+    padding: 4px 8px;
+    display: block;
+    border-radius: 3px;
+}
+.custom-menu .sub-menu li a:hover {
+    background-color: #f0e6d0;
+    text-decoration: none;
+}
+</style>
+
+<div class="custom-menu">
+  <ul class="main-menu">
+    <li><a href="{{ site.baseurl }}/">🏠 หน้าแรก</a></li> <li class="has-sub">
+      <a href="javascript:void(0);" onclick="toggleSubMenu(this)">📚 พระไตรปิฎก ▸</a>
+      <ul class="sub-menu">
+        <li><a href="https://www.dhamma-sutta.com/p/blog-page_46.html#gsc.tab=0">พระวินัย (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/p/002.html#gsc.tab=0">พระสูตร (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/p/blog-page_21.html#gsc.tab=0">พระอภิธรรม (เว็บเดิม)</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <a href="javascript:void(0);" onclick="toggleSubMenu(this)">👤 อรรถกถา ▸</a>
+      <ul class="sub-menu">
+        <li><a href="https://www.dhamma-sutta.com/p/0001.html#gsc.tab=0">วิสุทธิมรรค (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/p/blog-page_20.html#gsc.tab=0">เนตติปกรณ์ (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/p/blog-page_11.html#gsc.tab=0">พุทธธรรม (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/search/label/พระอภิธรรม">มิลินทปัญหา (เว็บเดิม)</a></li>
+      </ul>
+    </li>
+
+    <li class="has-sub">
+      <a href="javascript:void(0);" onclick="toggleSubMenu(this)">📖 อภิธานศัพท์ ▸</a>
+      <ul class="sub-menu">
+        <li><a href="https://www.dhamma-sutta.com/p/blog-page_44.html#gsc.tab=0">พจนานุกรม บาลี-ไทย (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/2020/12/blog-post_17.html#gsc.tab=0">ไทย-อังกฤษ (เว็บเดิม)</a></li>
+        <li><a href="https://www.dhamma-sutta.com/2020/12/blog-post_9.html#gsc.tab=0">อังกฤษ-ไทย (เว็บเดิม)</a></li>
+      </ul>
+    </li>
+
+    <li><a href="https://www.dhamma-sutta.com/p/blog-page_3.html#gsc.tab=0">🔔 ปกิณกะ (เว็บเดิม)</a></li>
+    <li><a href="https://www.dhamma-sutta.com/p/blog-page_29.html#gsc.tab=0">📻 ธรรมบรรยาย (เว็บเดิม)</a></li>
+    <li><a href="https://www.dhamma-sutta.com/p/blog-page_14.html#gsc.tab=0">🕯️ ห้องปลงอสุภะ (เว็บเดิม)</a></li>
+    <li><a href="https://www.dhamma-sutta.com/p/blog-page_13.html">🔍 ค้นหาหัวข้อ (เว็บเดิม)</a></li>
+  </ul>
+</div>
+
+<script>
+function toggleSubMenu(anchorElement) {
+  const parentLi = anchorElement.parentElement;
+  const submenu = parentLi.querySelector('.sub-menu');
+
+  if (!submenu) {
+    return;
+  }
+
+  // ปิด sub-menu อื่นๆ ที่ไม่ได้อยู่ใน branch เดียวกัน (ถ้าต้องการ)
+  // const allMainMenus = anchorElement.closest('.custom-menu').querySelectorAll('.main-menu > .has-sub');
+  // allMainMenus.forEach(function(li) {
+  //   const otherSubmenu = li.querySelector('.sub-menu');
+  //   const otherAnchor = li.querySelector('a[onclick*="toggleSubMenu"]');
+  //   if (otherSubmenu && otherSubmenu !== submenu) {
+  //     otherSubmenu.classList.remove('submenu-active');
+  //     otherSubmenu.style.display = 'none';
+  //     if (otherAnchor) {
+  //        let text = otherAnchor.textContent.replace(/[▾▸]/g, '').trim();
+  //        otherAnchor.innerHTML = text + ' ▸';
+  //     }
+  //   }
+  // });
+
+
+  const isCurrentlyOpen = submenu.classList.contains('submenu-active');
+  let text = anchorElement.textContent.replace(/[▾▸]/g, '').trim();
+
+  if (isCurrentlyOpen) {
+    submenu.classList.remove('submenu-active');
+    submenu.style.display = 'none';
+    anchorElement.innerHTML = text + ' ▸';
+  } else {
+    submenu.classList.add('submenu-active');
+    submenu.style.display = 'block';
+    anchorElement.innerHTML = text + ' ▾';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var hasSubLinks = document.querySelectorAll('.custom-menu .has-sub > a');
+    hasSubLinks.forEach(function(link) {
+        var parentLi = link.parentElement;
+        var submenu = parentLi.querySelector('.sub-menu');
+        var text = link.textContent.replace(/[▾▸]/g, '').trim();
+
+        if (submenu) {
+            if (submenu.classList.contains('submenu-active') || submenu.style.display === 'block') {
+                link.innerHTML = text + ' ▾';
+            } else {
+                link.innerHTML = text + ' ▸';
+            }
+        } else {
+            link.innerHTML = text;
+        }
+    });
+});
+</script>
