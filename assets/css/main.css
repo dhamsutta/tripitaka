@@ -1,0 +1,38 @@
+/* assets/css/main.css */
+
+/* --- Basic Site Styles --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bai Jamjuree', Arial, sans-serif; /* ฟอนต์หลักที่คุณต้องการ */
+    font-size: 20px; /* ขนาดฟอนต์พื้นฐาน */
+    line-height: 1.7; /* ระยะห่างบรรทัด */
+    color: #333; /* สีตัวอักษรหลัก */
+    background-color: #f8f9fa; /* สีพื้นหลังอ่อนๆ สำหรับทั้งหน้า */
+    text-align: left; /* การจัดวางข้อความหลัก */
+}
+
+.wrapper { /* คลาสสำหรับจัดกึ่งกลางและจำกัดความกว้างเนื้อหา */
+    max-width: 960px; /* หรือความกว้างที่คุณต้องการ */
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px; /* ระยะห่างซ้ายขวาภายใน wrapper */
+    padding-left: 20px;
+}
+
+/* สไตล์พื้นฐานสำหรับลิงก์ (จะปรับปรุงเพิ่มทีหลัง) */
+a {
+    color: #0645ad; /* สีลิงก์ */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0b0080; /* สีลิงก์เมื่อเมาส์ชี้ */
+}
+
+/* สไตล์พื้นฐานสำหรับรูปภาพ (เพื่อให้ responsive) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* ลดช่องว่างใต้ภาพที่อาจเกิดขึ้น */
+}
