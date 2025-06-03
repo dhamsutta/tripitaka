@@ -71,6 +71,14 @@
       transition: transform 0.3s ease;
     }
 
+.sidebar {
+  background: rgba(255, 255, 255, 0.5); /* ✅ พื้นหลังขาว โปร่งใส 50% */
+  backdrop-filter: blur(4px);           /* (optional) เบลอพื้นหลัง */
+}
+
+
+    
+
     .sidebar.hidden {
       transform: translateX(-100%);
     }
