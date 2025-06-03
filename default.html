@@ -254,6 +254,50 @@
 
 <div class="content">
 
+<script>
+  const labels = {
+    'tripitaka': 'หน้าแรก',
+    'vinaya': 'พระวินัย',
+    'sutta': 'พระสูตร',
+    'abhidhamma': 'พระอภิธรรม',
+    'atthakatha': 'อรรถกถา',
+    'visuddhimagga': 'วิสุทธิมรรค',
+    'nettippakarana': 'เนตติปกรณ์',
+    'buddhadhamma': 'พุทธธรรม',
+    'milindapanha': 'มิลินทปัญหา',
+    'dictionary': 'คำอภิธานศัพท์',
+    'pali-thai': 'พจนานุกรม บาลี-ไทย',
+    'thai-eng': 'ไทย-อังกฤษ',
+    'eng-thai': 'อังกฤษ-ไทย',
+    'pakinnaka': 'ปกิณกะ',
+    'audio': 'ฟังธรรมะออนไลน์',
+    'asubha': 'ห้องปลงอสุภะ',
+    'search': 'ค้นหาหัวข้อธรรมะ'
+  };
+
+  const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
+  const baseURL = '/' + path[0] + '/';
+
+  let breadcrumb = `<a href="${baseURL}">${labels['tripitaka']}</a>`;
+
+  let fullPath = '';
+  for (let i = 1; i < path.length; i++) {
+    fullPath += '/' + path[i];
+    const label = labels[path[i]] || decodeURIComponent(path[i]);
+    const url = '/' + path.slice(0, i + 1).join('/');
+    breadcrumb += ` › <a href="${url}">${label}</a>`;
+  }
+
+  document.write(`<nav style="font-size: 14px; margin-bottom: 20px;">${breadcrumb}</nav>`);
+</script>
+
+
+
+
+
+
+  
+
   <nav aria-label="breadcrumb" style="font-size: 14px; margin-bottom: 20px;">
   <ol style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px;">
     <li><a href="/tripitaka/">หน้าแรก</a> ›</li>
