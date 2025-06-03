@@ -75,9 +75,16 @@ a.readmore-button:hover {
   background-color: #333;
 }
 
+.sidebar ul {
+  font-size: 16px;
+  line-height: 1.4;
+  padding-left: 0;
+  list-style: none;
+}
 
-
-
+a.readmore-button:hover {
+  background-color: #d1ae3d;
+}
     
 
     body {
@@ -185,11 +192,13 @@ a.readmore-button:hover {
       background-color: #0b0080;
     }
 
-    @media (max-width: 768px) {
-      .content {
-        margin-left: 30px;
-      }
-    }
+  @media (max-width: 768px) {
+  .content {
+    margin: 20px 10px;
+    padding: 20px 16px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -236,17 +245,18 @@ a.readmore-button:hover {
     </p>
 
 
-<a href="citta.html" style="
+<a href="citta.html" class="readmore-button" style="
   display: inline-block;
-  background-color: #0645ad;
-  color: white;
+  background-color: #e0c35a;
+  color: #222;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
 ">
-  📖 อ่านต่อเรื่อง “จิต”
+  📖 อ่านต่อ...
 </a>
 
 
