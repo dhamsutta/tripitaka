@@ -194,7 +194,7 @@
   <button class="menu-toggle" onclick="toggleSidebar()">☰ เมนู</button>
 
  <div class="sidebar" id="sidebar">
-  <a href="/" style="display: block; text-align: center; margin-bottom: 20px;">
+  <a href="/tripitaka/" style="display: block; text-align: center; margin-bottom: 20px;">
     <img src="https://github.com/dhamsutta/tripitaka/blob/main/images/logo.png?raw=true"
          alt="โลโก้เว็บไซต์"
          style="max-width: 100px; height: auto;">
@@ -262,6 +262,18 @@
 
   <button onclick="scrollToTop()" id="backToTopBtn" title="กลับด้านบน">⬆️</button>
 
+  <!-- ✅ ต้องมี script นี้ -->
+  <script>
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        ? "block" : "none";
+    };
 
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
+
 </html>
