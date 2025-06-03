@@ -15,77 +15,112 @@
     <meta content="ประโยชน์ที่จะได้รับจากการศึกษาพระอภิธรรม" name="twitter:title">
     <meta content="สรุปประโยชน์สำคัญจากการศึกษาพระอภิธรรมธรรมะขั้นสูงในพระพุทธศาสนา" name="twitter:description">
     <style>
-        /* Wiki Style for Standalone/GitHub Page */
-        body, html { /* ย้าย font import มาไว้นอก body,html selector ถ้าจะให้ดีควรเป็น link tag */
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9; /* สีพื้นหลังอ่อนๆ สำหรับ body ทั้งหมด */
-        }
         @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
 
-        .wiki-article-container { /* Container หลักสำหรับเนื้อหาบน GitHub Page */
+        /* General Reset and Body Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
             font-family: 'Bai Jamjuree', Arial, sans-serif;
-            font-size: 20px;
-            line-height: 1.7;
-            color: #202122;
+            font-size: 20px; /* User preference */
+            line-height: 1.7; /* User preference */
+            color: #202122; /* Dark grey for text, good contrast */
+            background-color: #f8f9fa; /* Very light grey background for the page */
+            text-align: left; /* User preference */
+        }
+
+        /* Main Content Container */
+        .wiki-article-container {
+            max-width: 900px;
+            margin: 40px auto; /* More margin for better centering */
+            padding: 30px 45px; /* Increased padding */
             background-color: #ffffff;
-            text-align: left;
-            max-width: 900px; /* จำกัดความกว้างเนื้อหา */
-            margin: 30px auto; /* จัดกึ่งกลาง */
-            padding: 25px 40px; /* ระยะห่างภายใน */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Slightly more pronounced shadow */
             border-radius: 8px;
+            border-top: 4px solid #0645ad; /* Accent color similar to wiki links */
         }
+
+        /* Headings */
         .wiki-article-container h2 {
-            font-size: 1.6em;
-            color: #000000;
+            font-size: 1.8em; /* Slightly larger for main title */
+            color: #1a1a1a; /* Darker black for heading */
             border-bottom: 1px solid #a2a9b1;
-            padding-bottom: 0.3em;
-            margin-top: 25px;
-            margin-bottom: 16px;
-            font-weight: normal;
+            padding-bottom: 0.4em;
+            margin-top: 1em; /* Adjust top margin */
+            margin-bottom: 20px; /* Consistent with paragraph margin */
+            font-weight: 700; /* Make H2 bold */
         }
+
+        /* Paragraphs and Lists */
         .wiki-article-container p,
         .wiki-article-container ul {
-            margin-bottom: 16px;
-            text-align: left;
+            margin-bottom: 16px; /* User preference */
+            text-align: left; /* User preference */
         }
+
         .wiki-article-container ul {
-            padding-left: 1.8em;
+            padding-left: 1.8em; /* Standard list indentation */
             list-style-type: disc;
         }
+
         .wiki-article-container li {
-            margin-bottom: 8px;
+            margin-bottom: 10px; /* Slightly more space for list items */
         }
+
+        /* Links */
         .wiki-article-container a {
-            color: #0645ad;
+            color: #0645ad; /* Wikipedia blue */
             text-decoration: underline;
         }
         .wiki-article-container a:visited {
-            color: #0b0080;
+            color: #0b0080; /* Wikipedia purple for visited links */
         }
+        .wiki-article-container a:hover {
+            text-decoration: none; /* Optional: remove underline on hover */
+        }
+
+        /* Strong / Bold Text */
         .wiki-article-container strong {
-            font-weight: bold;
+            font-weight: 700; /* Ensure strong is bold */
         }
-        .wiki-article-container .tooltip-term strong {
-            font-weight: bold;
+
+        /* Tooltip Styling (for the term itself, tooltip appearance is browser default) */
+        .tooltip-term {
+            /* border-bottom: 1px dotted #54595d; /* Optional: subtle underline to indicate tooltip */
+            /* cursor: help; /* Optional: change cursor to indicate help */
         }
+        .tooltip-term strong { /* Ensure text within tooltip span is bold */
+             font-weight: 700;
+        }
+
+        /* Horizontal Rule */
         .wiki-article-container hr {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
             border: 0;
             border-top: 1px solid #c8ccd1;
         }
+
+        /* Footer Sections for Tags and Links */
         .wiki-article-container .section-footer {
-            margin-top:30px;
-            padding-top:15px;
+            margin-top: 35px;
+            padding-top: 20px;
             border-top: 1px solid #c8ccd1;
+            font-size: 0.9em; /* Slightly smaller text for footer sections */
+            color: #54595d;
+        }
+        .wiki-article-container .section-footer p strong {
+            color: #333; /* Darker color for footer headings */
+        }
+         .wiki-article-container .section-footer ul {
+            margin-bottom: 10px; /* Less margin for lists in footer */
         }
     </style>
 </head>
 <body>
 
-    <div class="wiki-article-container"> <h2>🕯️ ประโยชน์ที่จะได้รับจากการศึกษาพระอภิธรรม</h2>
+    <div class="wiki-article-container">
+        <h2>🕯️ ประโยชน์ที่จะได้รับจากการศึกษาพระอภิธรรม</h2>
 
         <p>
         ประโยชน์ที่จะได้รับจากการศึกษาพระอภิธรรม ซึ่งเป็นธรรมะขั้นสูงที่ว่าด้วย <span class="tooltip-term" title="สภาวะที่มีอยู่จริงโดยตัวเอง, ความจริงอันสูงสุด (จิต, เจตสิก, รูป, นิพพาน)"><strong>ปรมัตถธรรม</strong></span> คือ
@@ -119,7 +154,7 @@
 
             <li>การศึกษาพระอภิธรรมจะทำให้เข้าใจสภาวธรรมอีกประการหนึ่ง อันเป็นจุดมุ่งหมายสูงสุดในพระพุทธศาสนาที่ต้องการให้เข้าถึง นั่นก็คือ
             <span class="tooltip-term" title="ความดับสิ้นเชื้อแห่งทุกข์, การหลุดพ้นจากสังสารวัฏ"><strong>นิพพาน</strong></span>.
-            นิพพานหมายถึงความหลุดพ้นจากกิเลสตัณหา ผู้ที่ปราศจากกิเลสตัณหาแล้วนั้น เมื่อสิ้นชีวิตลงก็จะไม่มีการสืบต่อของจิต+เจตสิกและรูปอีกต่อไป ไม่มีการสืบต่อภพชาติ หยุดการเวียนว่ายตายเกิด พ้นจากทุกข์ทั้งปวงโดยสิ้นเชิง จึงกล่าวว่านิพพานเป็นธรรมชาติที่ปราศจากกิเลสตัณหา เป็นธรรมชาติที่ดับทุกข์โดยสิ้นเชิงและเป็นธรรมชาติที่พ้นจาก
+            นิพพานหมายถึงความหลุดพ้นจากกิเลสตัณหา ผู้ที่ปราศจากกิเลสตัณหาแล้วนั้น เมื่อสิ้นชีวิตลงก็จะไม่มีการสืบต่อของจิต เจตสิก และรูปอีกต่อไป ไม่มีการสืบต่อภพชาติ หยุดการเวียนว่ายตายเกิด พ้นจากทุกข์ทั้งปวงโดยสิ้นเชิง จึงกล่าวว่านิพพานเป็นธรรมชาติที่ปราศจากกิเลสตัณหา เป็นธรรมชาติที่ดับทุกข์โดยสิ้นเชิงและเป็นธรรมชาติที่พ้นจาก
             <span class="tooltip-term" title="กองแห่งรูปธรรมและนามธรรม ๕ อย่าง: รูป เวทนา สัญญา สังขาร วิญญาณ"><strong>ขันธ์ ๕</strong></span>.
             นิพพานมิใช่เป็นแดนสุขาวดีที่เป็นอมตะและเพียบพร้อมด้วยความสุขล้วนๆ ตลอดนิรันดร์กาลตามที่คนส่วนใหญ่เข้าใจ</li>
 
