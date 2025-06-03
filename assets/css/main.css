@@ -36,3 +36,50 @@ img {
     height: auto;
     display: block; /* ลดช่องว่างใต้ภาพที่อาจเกิดขึ้น */
 }
+
+/* assets/css/main.css - เพิ่มสไตล์เหล่านี้ต่อท้าย */
+
+/* Layout Container for Main Content and Sidebar */
+.layout-container {
+    display: flex;
+    flex-wrap: wrap; /* ให้ sidebar ตกลงมาข้างล่างในจอเล็ก */
+    gap: 30px; /* ระยะห่างระหว่าง main content กับ sidebar */
+}
+
+.main-content-area {
+    flex: 3; /* ให้เนื้อหาหลักกว้างกว่า */
+    min-width: 0; /* ป้องกันปัญหาการล้นของ flex item */
+}
+
+.sidebar-area {
+    flex: 1; /* ให้ sidebar แคบกว่า */
+    min-width: 280px; /* กำหนดความกว้างขั้นต่ำของ sidebar (ปรับได้) */
+    /* สไตล์พื้นฐานสำหรับ sidebar area ถ้าต้องการ แต่เมนู custom ของคุณจะมีสไตล์ของมันเอง */
+    /* background-color: #f1f1f1; */
+    /* padding: 15px; */
+}
+
+.sidebar-area .sidebar-title { /* สไตล์สำหรับหัวข้อของ sidebar block เช่น "เมนูนำทาง" */
+    font-size: 1.25em; /* ประมาณ 25px ถ้า base คือ 20px */
+    color: #5D4037; /* สีน้ำตาลเข้ม */
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E0E0E0; /* เส้นคั่นบางๆ */
+    font-weight: 500;
+}
+
+/* Responsive: เมื่อหน้าจอเล็กกว่า 768px ให้ sidebar อยู่เต็มความกว้างและตกลงมาข้างล่าง */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+    }
+    .main-content-area,
+    .sidebar-area {
+        flex: 1 1 100%; /* ทำให้เต็มความกว้าง */
+        min-width: auto;
+    }
+    .sidebar-area {
+        margin-top: 30px; /* เพิ่มระยะห่างเมื่อ sidebar ตกลงมาข้างล่าง */
+    }
+}
