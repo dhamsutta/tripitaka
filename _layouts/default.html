@@ -31,9 +31,7 @@
 
     <main class="page-content">
         <div class="wrapper">
-            <div class="layout-container">
-                <div class="main-content-area">
-                    <article class="post">
+            <div class="layout-container"> <div class="main-content-area"> <article class="post">
                         <header class="post-header">
                             <h1 class="post-title">{{ page.title | default: "หัวข้อเรื่อง" | escape }}</h1>
                         </header>
@@ -41,28 +39,25 @@
                             {{ content }}
                         </div>
                     </article>
-                </div>
-
-                {% if page.sidebar %}
-               
-                    <aside class="sidebar-area" style="border: 2px solid red; padding: 10px;">
-                        <p style="color: red; font-weight: bold;">-- DEBUG START --</p>
-                        {% if page.sidebar_include %}
-                            <p style="color: green;">page.sidebar_include ถูกตั้งค่าไว้คือ: "{{ page.sidebar_include }}"</p>
-                            {% if page.sidebar_title %}
-                                <h3 class="sidebar-title">{{ page.sidebar_title }}</h3>
-                            {% else %}
-                                <p style="color: orange;">page.sidebar_title ไม่ได้ถูกตั้งค่า</p>
-                            {% endif %}
-                            <p style="color: blue;">กำลังจะ include ไฟล์: {{ page.sidebar_include }}</p>
-                            {% include {{ page.sidebar_include }} %}
+                </div> {% comment %} ----- เริ่มส่วนทดสอบ Sidebar (นี่คือบล็อกเดียวที่ควรจะมีสำหรับ sidebar ตอนนี้) ----- {% endcomment %}
+                <aside class="sidebar-area" style="border: 2px solid red; padding: 10px;">
+                    <p style="color: red; font-weight: bold;">-- DEBUG START --</p>
+                    {% if page.sidebar_include %}
+                        <p style="color: green;">page.sidebar_include ถูกตั้งค่าไว้คือ: "{{ page.sidebar_include }}"</p>
+                        {% if page.sidebar_title %}
+                            <h3 class="sidebar-title">{{ page.sidebar_title }}</h3>
                         {% else %}
-                            <p style="color: red; font-weight: bold;">page.sidebar_include ไม่ได้ถูกตั้งค่า หรือเป็นค่าว่าง!</p>
+                            <p style="color: orange;">page.sidebar_title ไม่ได้ถูกตั้งค่า</p>
                         {% endif %}
-                        <p style="color: red; font-weight: bold;">-- DEBUG END --</p>
-                    </aside>
-                    {% comment %} ----- จบส่วนทดสอบ Sidebar ----- {% endcomment %}
-          
+                        <p style="color: blue;">กำลังจะ include ไฟล์: {{ page.sidebar_include }}</p>
+                        {% include {{ page.sidebar_include }} %}
+                    {% else %}
+                        <p style="color: red; font-weight: bold;">page.sidebar_include ไม่ได้ถูกตั้งค่า หรือเป็นค่าว่าง!</p>
+                    {% endif %}
+                    <p style="color: red; font-weight: bold;">-- DEBUG END --</p>
+                </aside>
+                {% comment %} ----- จบส่วนทดสอบ Sidebar ----- {% endcomment %}
+
             </div> </div> </main>
 
     <footer class="site-footer">
