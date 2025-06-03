@@ -1,1 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <!-- Favicon -->
+  <link rel="icon" href="/tripitaka/images/icon-512.png" type="image/png" />
 
+  <!-- OG Image สำหรับแชร์ -->
+  <meta property="og:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
+
+  <!-- Structured Data (Breadcrumb for SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "หน้าแรก",
+        "item": "https://dhamsutta.github.io/tripitaka/"
+      },
+
+
+
+
+    
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "พระอภิธรรม",
+        "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "จิต",
+        "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/citta.html"
+      }
+    ]
+  }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ชื่อหน้า | ชื่อเว็บไซต์</title>
+  <meta name="description" content="คำอธิบายสั้น ๆ ของเนื้อหาในหน้านี้" />
+  <meta name="keywords" content="ธรรมะ, พระไตรปิฎก, พระอภิธรรม, จิต เจตสิก, วิปัสสนา" />
+
+  <!-- Font และสไตล์ -->
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+:target {
+  animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+  0%   { background-color: #fffcb0; }
+  50%  { background-color: #fffcb0; }
+  100% { background-color: transparent; }
+}
+
+
+
+
+
+
+    
+
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #222;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar.hidden {
+      transform: translateX(-100%);
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 1100;
+      border-radius: 6px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      margin-left: 260px;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.hidden ~ .content {
+      margin-left: 30px;
+    }
+
+    h1, h2, h3 {
+      color: #222;
+      scroll-margin-top: 100px;
+    }
+
+    .tooltip-term[title] {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+    }
+
+    a {
+      color: #0645ad;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #0b0080;
+    }
+
+    hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 22px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 50%;
+      background-color: #0645ad;
+      color: white;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #0b0080;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        margin-left: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+<h2 style="text-align: left;"><span style="background-color: #fff2cc;">พระอภิธรรมเบื้องต้น<br /><span style="font-size: medium;">ตามหลักสูตรพระอภิธรรมโชติกะวิทยาลัย</span></span></h2><p><b><span style="color: #2b00fe;">🔗 <u>หมวดที่ ๐๑ พระอภิธรรมคืออะไร</u></span></b></p><div class="separator" style="clear: both; text-align: center;"><b><span style="color: #2b00fe;"><u><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRcAqEU9I8BzRfA47pyFTsWUz85A-ESChJIGUxoMq9nQ1UF3jhwQk2csDQwpcvsAIsRURe3VtSb8YBBHJSKym4_C8ndPWEqXFGGVgxI8bZ0lb-kiKnnKgBo0cWzJB7wnmXi27ANmywd3qHWOy0UNNuDoK5dJwwwe3FJRLIYdy96UbMrgcCYxABXe_loczV/s1200/corpse-meditation.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" data-original-height="1200" data-original-width="857" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRcAqEU9I8BzRfA47pyFTsWUz85A-ESChJIGUxoMq9nQ1UF3jhwQk2csDQwpcvsAIsRURe3VtSb8YBBHJSKym4_C8ndPWEqXFGGVgxI8bZ0lb-kiKnnKgBo0cWzJB7wnmXi27ANmywd3qHWOy0UNNuDoK5dJwwwe3FJRLIYdy96UbMrgcCYxABXe_loczV/s320/corpse-meditation.jpg" width="229" /></a></u></span></b></div><b><span style="color: #2b00fe;"><u><br /></u></span></b><p></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ประวัติพระอภิธรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. ประโยชน์จากพระอภิธรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. ปรมัตถและบัญญัติ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. พระอภิธัมมัตถสังคหะ</p><p><b><span style="color: #2b00fe;">🔗&nbsp;</span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๐๒ ชีวิต</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ชีวิตคืออะไร<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. จิตคืออะไร<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. ที่เกิดและอำนาจของจิต<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. บุญบาปเกิดขึ้นได้อย่างไร<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. ลักษณะของจิต</p><p><b><span style="color: #2b00fe;">🔗&nbsp;</span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๐๓ จิต</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ประเภทของจิต<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. กามาวจรจิต ๕๔ ดวง<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. รูปาวจรจิต ๑๕ ดวง<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. อรูปาวจรจิต ๑๒ ดวง<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. โลกุตตรจิต ๘ ดวง</p><p><b><span style="color: #2b00fe;">🔗&nbsp;</span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๐๔ เจตสิก</u></span></b>&nbsp;</p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. เจตสิก ๕๒ ดวง<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. เจตสิกกลุ่มที่ ๑<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. เจตสิกกลุ่มที่ ๒<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. เจตสิกกลุ่มที่ ๓</p><p><b><span style="color: #2b00fe;">🔗&nbsp;<u>หมวดที่ ๐๕ รูปปรมัตถ์&nbsp;</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>นัยที่ ๑ รูปสมุทเทสนัย<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>นัยที่ ๒ รูปวิภาคนัย<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>นัยที่ ๓ รูปสมุฏฐานนัย<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>นัยที่ ๔ รูปกลาปนัย<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>นัยที่ ๕ รูปปวัตติกมนัย</p><p><b><span style="color: #2b00fe;">🔗<u>หมวดที่ ๐๖ ภพภูมิ</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ความเป็นไปในสังสารวัฏ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. ภพภูมิทั้ง ๓๑ ภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. นรกภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. ดิรัจฉานภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. เปรตภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๖. อสุรกายภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๗. มนุษยภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๘. เทวภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๙. รูปาวจรภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑๐. อรูปาวจรภูมิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑๑. อายุของสัตว์ในภูมิทั้ง ๓๑</p><p><b><span style="color: #2b00fe;">🔗</span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๐๗ กฎแห่งกรรม</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ความรู้เบื้องต้นของกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. ประเภทของกรรม <br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- ชนกกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อุปัตถัมภกกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อุปปีฬกกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อุปฆาตกกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp; &nbsp; ๓.&nbsp;</span>ความหนักเบาของกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- ครุกกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- อาสันนกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- อาจิณณกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- กฏัตตากรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. ผลของกรรมกับการให้ผล<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;ทิฏฐธัมมเวทนียกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อุปปัชชเวทนียกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อปราปริยเวทนียกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;อโหสิกรรม<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. กรรมชั่ว กรรมดี<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>&nbsp;- อกุศลกรรม<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- กายทุจริต ๓<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- วจีทุจริต ๔<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- มโนทุจริต ๓<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- กามาวจรกุศลกรรม<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- บุญกิริยาวัตถุ ๑๐<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- รูปาวจรกุศลกรรม<br />&nbsp;<span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>- อรูปาวจรกุศลกรรม<br /><b><span style="color: #2b00fe;">🔗&nbsp;<u>หมวดที่ ๐๘ สมุจจยสังคหะ</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. อกุศลสังคหะ (ธรรมที่เป็นบาปล้วนๆ)<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. มิสสกสังคหะ (ธรรมที่เป็นเหตุของการทำบุญ, ทำบาป, อพยากตะ)<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. โพธิปักขิยสังคหะ (ธรรมที่จะทําให้เข้าถึงมรรคผล)<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. สัพพสังคหะ (ธรรมที่สงเคราะห์จิต เจตสิก รูป นิพพาน)</p><p><b><span style="color: #2b00fe;">🔗<u>&nbsp;</u></span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๐๙ สมถกรรมฐาน</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. ความรู้เบื้องต้นของกรรมฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. รูปฌาน อรูปฌาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. ประโยชน์ของสมาธิ<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. กสิณ ๑๐<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. อสุภะ ๑๐<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๖. อนุสสติ ๑๐<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๗. อัปปมัญญา ๔<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๘. อาหาเรปฏิกูลสัญญา ๑<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๙. จตุธาตุววัฏฐาน ๑<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑๐. อรูปกรรมฐาน ๔</p><p><b><span style="color: #2b00fe;">🔗</span></b><b><span style="color: #2b00fe;"><u>หมวดที่ ๑๐ วิปัสสนากรรมฐาน</u></span></b></p><p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๑. สติปัฏฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;กายานุปัสสนาสติปัฏฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;เวทนานุปัสสนาสติปัฏฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;จิตตานุปัสสนาสติปัฏฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>-&nbsp;ธัมมานุปัสสนาสติปัฏฐาน<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๒. วิสุทธิ ๗<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๓. ลักษณะ ๓<br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๔. อนุปัสสนา <br /><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>๕. ญาณ ๑๖<br /><br /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <button class="menu-toggle" onclick="toggleSidebar()">☰ เมนู</button>
+
+  <div class="sidebar" id="sidebar">
+    <a href="/tripitaka/" style="display: block; text-align: center; margin-bottom: 20px;">
+      <img src="https://github.com/dhamsutta/tripitaka/blob/main/images/logo.png?raw=true"
+           alt="โลโก้เว็บไซต์"
+           style="max-width: 100px; height: auto;">
+    </a>
+    <h2>เมนู</h2>
+    <ul>
+      <li><a href="#intro">เริ่มต้น</a></li>
+      <li><a href="#citta">จิต</a></li>
+      <li><a href="#vipassana">วิปัสสนา</a></li>
+      <li><a href="#footer">ท้ายบท</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <!-- ✅ Breadcrumb แสดงที่เดียว -->
+    <nav id="breadcrumb" style="font-size: 14px; margin-bottom: 20px;"></nav>
+
+    <!-- ✅ Google Search -->
+    <script async src="https://cse.google.com/cse.js?cx=51c4343b3eeb842d6"></script>
+    <div class="gcse-search"></div>
+
+    <h1 id="intro">🕯️ หัวข้อหลักของหน้า</h1>
+    <p>
+      ตัวอย่างการใช้ <span class="tooltip-term" title="คำอธิบายคำศัพท์หรือคำเฉพาะที่ต้องการขยายความ">Tooltip</span> สำหรับคำเฉพาะ หรือศัพท์บาลี
+    </p>
+
+    <p>ย่อหน้าธรรมะเริ่มต้น...</p>
+
+    <hr />
+
+    <h2 id="citta">จิต</h2>
+    <p>จิตคือธรรมชาติรู้อารมณ์ เป็นนามธรรมที่เกิดดับไวมาก ไม่สามารถมองเห็นด้วยตาเปล่า แต่เป็นองค์ประกอบหลักของการเวียนว่ายตายเกิด</p>
+
+    <hr />
+
+    <h2 id="vipassana">วิปัสสนา</h2>
+    <p>วิปัสสนาคือการเห็นตามความเป็นจริงของรูปนาม เกิดจากการเจริญสติอย่างต่อเนื่อง</p>
+
+    <hr />
+
+    <h2 id="footer">ท้ายบท</h2>
+    <p><strong>แท็ก:</strong> พระอภิธรรม, ปรมัตถธรรม, วิปัสสนา</p>
+  </div>
+
+  <button onclick="scrollToTop()" id="backToTopBtn" title="กลับด้านบน">⬆️</button>
+
+  <footer style="width: 100%; text-align: center; font-size: 14px; color: #888; margin-top: 60px; padding: 20px 0;">
+    จัดทำโดย <a href="https://github.com/dhamsutta/tripitaka" target="_blank">Dhamsutta</a> |
+    <a href="/tripitaka/">หน้าแรก</a>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('hidden');
+    }
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ✅ Breadcrumb อัตโนมัติ
+    const labels = {
+      'tripitaka': 'หน้าแรก',
+      'vinaya': 'พระวินัย',
+      'sutta': 'พระสูตร',
+      'abhidhamma': 'พระอภิธรรม',
+      'atthakatha': 'อรรถกถา',
+      'visuddhimagga': 'วิสุทธิมรรค',
+      'nettippakarana': 'เนตติปกรณ์',
+      'buddhadhamma': 'พุทธธรรม',
+      'milindapanha': 'มิลินทปัญหา',
+      'dictionary': 'คำอภิธานศัพท์',
+      'pali-thai': 'พจนานุกรม บาลี-ไทย',
+      'thai-eng': 'ไทย-อังกฤษ',
+      'eng-thai': 'อังกฤษ-ไทย',
+      'pakinnaka': 'ปกิณกะ',
+      'audio': 'ฟังธรรมะออนไลน์',
+      'asubha': 'ห้องปลงอสุภะ',
+      'search': 'ค้นหาหัวข้อธรรมะ'
+    };
+
+    const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
+    let breadcrumbHTML = '';
+    let url = '';
+    path.forEach((segment, i) => {
+      url += '/' + segment;
+      const label = labels[segment] || decodeURIComponent(segment);
+      breadcrumbHTML += (i > 0 ? ' › ' : '') + `<a href="${url}">${label}</a>`;
+    });
+
+    document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
+  </script>
+</body>
+</html>
