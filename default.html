@@ -296,9 +296,23 @@ a.readmore-button:hover {
   </footer>
 
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('hidden');
-    }
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('hidden');
+  }
+
+  // หด sidebar เมื่อคลิกเนื้อหาหลัก
+  document.addEventListener('DOMContentLoaded', function () {
+    const content = document.querySelector('.content');
+    const sidebar = document.getElementById('sidebar');
+
+    content.addEventListener('click', function () {
+      if (!sidebar.classList.contains('hidden') && window.innerWidth <= 768) {
+        sidebar.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
 
     window.onscroll = function () {
       const btn = document.getElementById("backToTopBtn");
