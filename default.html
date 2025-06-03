@@ -1,83 +1,51 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<!-- Favicon -->
-<link rel="icon" href="/tripitaka/images/icon-512.png" type="image/png" />
+  <!-- Favicon -->
+  <link rel="icon" href="/tripitaka/images/icon-512.png" type="image/png" />
 
-<!-- OG Image สำหรับแชร์ -->
-<meta property="og:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <!-- OG Image สำหรับแชร์ -->
+  <meta property="og:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://dhamsutta.github.io/tripitaka/images/dhammalogo.png" />
 
+  <!-- Structured Data (Breadcrumb for SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "หน้าแรก",
+        "item": "https://dhamsutta.github.io/tripitaka/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "พระอภิธรรม",
+        "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "จิต",
+        "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/citta.html"
+      }
+    ]
+  }
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "หน้าแรก",
-      "item": "https://dhamsutta.github.io/tripitaka/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "พระอภิธรรม",
-      "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "จิต",
-      "item": "https://dhamsutta.github.io/tripitaka/abhidhamma/citta.html"
-    }
-  ]
-}
-</script>
-
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ชื่อหน้า | ชื่อเว็บไซต์</title>
   <meta name="description" content="คำอธิบายสั้น ๆ ของเนื้อหาในหน้านี้" />
   <meta name="keywords" content="ธรรมะ, พระไตรปิฎก, พระอภิธรรม, จิต เจตสิก, วิปัสสนา" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ชื่อหน้า | ชื่อเว็บไซต์" />
-  <meta property="og:description" content="คำอธิบายสำหรับแชร์ไปยัง Facebook หรือ LINE" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://yourdomain.github.io/path/to/page.html" />
-  <meta property="og:image" content="https://yourdomain.github.io/assets/cover.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ชื่อหน้า | ชื่อเว็บไซต์" />
-  <meta name="twitter:description" content="คำอธิบายสำหรับแชร์ไปยัง Twitter" />
-  <meta name="twitter:image" content="https://yourdomain.github.io/assets/cover.jpg" />
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "ชื่อบทความหรือหน้า",
-    "description": "คำอธิบายของบทความหรือหน้า",
-    "author": { "@type": "Person", "name": "ชื่อผู้เขียนหรือเว็บไซต์" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ชื่อเว็บไซต์",
-      "logo": { "@type": "ImageObject", "url": "https://yourdomain.github.io/assets/logo.png" }
-    },
-    "url": "https://yourdomain.github.io/path/to/page.html",
-    "datePublished": "2025-06-03"
-  }
-  </script>
 
   <!-- Font และสไตล์ -->
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
@@ -95,10 +63,6 @@
       background: #f9f9f9;
       margin: 0;
       padding: 0;
-      body {
-  display: block;
-}
-;
     }
 
     .sidebar {
@@ -107,21 +71,14 @@
       left: 0;
       width: 240px;
       height: 100vh;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
       padding: 20px;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
       overflow-y: auto;
       z-index: 1000;
       transition: transform 0.3s ease;
     }
-
-.sidebar {
-  background: rgba(255, 255, 255, 0.5); /* ✅ พื้นหลังขาว โปร่งใส 50% */
-  backdrop-filter: blur(4px);           /* (optional) เบลอพื้นหลัง */
-}
-
-
-    
 
     .sidebar.hidden {
       transform: translateX(-100%);
@@ -182,151 +139,60 @@
       border-top: 1px solid #ccc;
     }
 
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 22px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 50%;
+      background-color: #0645ad;
+      color: white;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
 
-#backToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 999;
-  font-size: 22px;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 50%;
-  background-color: #0645ad;
-  color: white;
-  cursor: pointer;
-  display: none; /* ซ่อนไว้ก่อน */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease;
-}
-
-#backToTopBtn:hover {
-  background-color: #0b0080;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    #backToTopBtn:hover {
+      background-color: #0b0080;
+    }
 
     @media (max-width: 768px) {
       .content {
         margin-left: 30px;
       }
-      
     }
-
-
-
-
-
-
-    
   </style>
 </head>
 <body>
-
   <button class="menu-toggle" onclick="toggleSidebar()">☰ เมนู</button>
 
- <div class="sidebar" id="sidebar">
-  <a href="/tripitaka/" style="display: block; text-align: center; margin-bottom: 20px;">
-    <img src="https://github.com/dhamsutta/tripitaka/blob/main/images/logo.png?raw=true"
-         alt="โลโก้เว็บไซต์"
-         style="max-width: 100px; height: auto;">
-  </a>
-  <h2>เมนู</h2>
-  <ul>
-    <li><a href="#intro">เริ่มต้น</a></li>
-    <li><a href="#citta">จิต</a></li>
-    <li><a href="#vipassana">วิปัสสนา</a></li>
-    <li><a href="#footer">ท้ายบท</a></li>
-  </ul>
-</div>
+  <div class="sidebar" id="sidebar">
+    <a href="/tripitaka/" style="display: block; text-align: center; margin-bottom: 20px;">
+      <img src="https://github.com/dhamsutta/tripitaka/blob/main/images/logo.png?raw=true"
+           alt="โลโก้เว็บไซต์"
+           style="max-width: 100px; height: auto;">
+    </a>
+    <h2>เมนู</h2>
+    <ul>
+      <li><a href="#intro">เริ่มต้น</a></li>
+      <li><a href="#citta">จิต</a></li>
+      <li><a href="#vipassana">วิปัสสนา</a></li>
+      <li><a href="#footer">ท้ายบท</a></li>
+    </ul>
+  </div>
 
-<div class="content">
+  <div class="content">
 
-<script>
-  const labels = {
-    'tripitaka': 'หน้าแรก',
-    'vinaya': 'พระวินัย',
-    'sutta': 'พระสูตร',
-    'abhidhamma': 'พระอภิธรรม',
-    'atthakatha': 'อรรถกถา',
-    'visuddhimagga': 'วิสุทธิมรรค',
-    'nettippakarana': 'เนตติปกรณ์',
-    'buddhadhamma': 'พุทธธรรม',
-    'milindapanha': 'มิลินทปัญหา',
-    'dictionary': 'คำอภิธานศัพท์',
-    'pali-thai': 'พจนานุกรม บาลี-ไทย',
-    'thai-eng': 'ไทย-อังกฤษ',
-    'eng-thai': 'อังกฤษ-ไทย',
-    'pakinnaka': 'ปกิณกะ',
-    'audio': 'ฟังธรรมะออนไลน์',
-    'asubha': 'ห้องปลงอสุภะ',
-    'search': 'ค้นหาหัวข้อธรรมะ'
-  };
+    <!-- ✅ Breadcrumb แสดงที่เดียว -->
+    <nav id="breadcrumb" style="font-size: 14px; margin-bottom: 20px;"></nav>
 
-  const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
-  const baseURL = '/' + path[0] + '/';
-
-  let breadcrumb = `<a href="${baseURL}">${labels['tripitaka']}</a>`;
-
-  let fullPath = '';
-  for (let i = 1; i < path.length; i++) {
-    fullPath += '/' + path[i];
-    const label = labels[path[i]] || decodeURIComponent(path[i]);
-    const url = '/' + path.slice(0, i + 1).join('/');
-    breadcrumb += ` › <a href="${url}">${label}</a>`;
-  }
-
-  document.write(`<nav style="font-size: 14px; margin-bottom: 20px;">${breadcrumb}</nav>`);
-</script>
-
-
-
-
-
-
-  
-
-  <nav aria-label="breadcrumb" style="font-size: 14px; margin-bottom: 20px;">
-  <ol style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px;">
-    <li><a href="/tripitaka/">หน้าแรก</a> ›</li>
-    <li><a href="/tripitaka/abhidhamma/">พระอภิธรรม</a> ›</li>
-    <li><a href="/tripitaka/abhidhamma/citta.html">จิต</a></li>
-  </ol>
-</nav>
-
-
-  <!--
-  <form action="https://www.google.com/search" method="get" target="_blank" style="text-align: center; margin-bottom: 40px;">
-    <input type="text" name="q" placeholder="ค้นหาในเว็บไซต์นี้..." required
-           style="padding: 10px; width: 60%; max-width: 400px; border: 1px solid #ccc; border-radius: 6px;">
-    <input type="hidden" name="sitesearch" value="tripitaka.github.io">
-    <button type="submit"
-            style="padding: 10px 16px; border: none; background-color: #0645ad; color: white; border-radius: 6px; cursor: pointer;">
-      🔍 ค้นหา
-    </button>
-  </form>
--->
- 
-
-
- <!-- ✅ กล่องค้นหา Google -->
-
-  <script async src="https://cse.google.com/cse.js?cx=51c4343b3eeb842d6">
-</script>
-<div class="gcse-search"></div>
- <!-- เนื้อหาหลัก -->
+    <!-- ✅ Google Search -->
+    <script async src="https://cse.google.com/cse.js?cx=51c4343b3eeb842d6"></script>
+    <div class="gcse-search"></div>
 
     <h1 id="intro">🕯️ หัวข้อหลักของหน้า</h1>
     <p>
@@ -351,16 +217,18 @@
     <p><strong>แท็ก:</strong> พระอภิธรรม, ปรมัตถธรรม, วิปัสสนา</p>
   </div>
 
+  <button onclick="scrollToTop()" id="backToTopBtn" title="กลับด้านบน">⬆️</button>
+
+  <footer style="width: 100%; text-align: center; font-size: 14px; color: #888; margin-top: 60px; padding: 20px 0;">
+    จัดทำโดย <a href="https://github.com/dhamsutta/tripitaka" target="_blank">Dhamsutta</a> |
+    <a href="/tripitaka/">หน้าแรก</a>
+  </footer>
+
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('hidden');
     }
-  </script>
 
-  <button onclick="scrollToTop()" id="backToTopBtn" title="กลับด้านบน">⬆️</button>
-
-  <!-- ✅ ต้องมี script นี้ -->
-  <script>
     window.onscroll = function () {
       const btn = document.getElementById("backToTopBtn");
       btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
@@ -370,16 +238,38 @@
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // ✅ Breadcrumb อัตโนมัติ
+    const labels = {
+      'tripitaka': 'หน้าแรก',
+      'vinaya': 'พระวินัย',
+      'sutta': 'พระสูตร',
+      'abhidhamma': 'พระอภิธรรม',
+      'atthakatha': 'อรรถกถา',
+      'visuddhimagga': 'วิสุทธิมรรค',
+      'nettippakarana': 'เนตติปกรณ์',
+      'buddhadhamma': 'พุทธธรรม',
+      'milindapanha': 'มิลินทปัญหา',
+      'dictionary': 'คำอภิธานศัพท์',
+      'pali-thai': 'พจนานุกรม บาลี-ไทย',
+      'thai-eng': 'ไทย-อังกฤษ',
+      'eng-thai': 'อังกฤษ-ไทย',
+      'pakinnaka': 'ปกิณกะ',
+      'audio': 'ฟังธรรมะออนไลน์',
+      'asubha': 'ห้องปลงอสุภะ',
+      'search': 'ค้นหาหัวข้อธรรมะ'
+    };
+
+    const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
+    let breadcrumbHTML = '';
+    let url = '';
+    path.forEach((segment, i) => {
+      url += '/' + segment;
+      const label = labels[segment] || decodeURIComponent(segment);
+      breadcrumbHTML += (i > 0 ? ' › ' : '') + `<a href="${url}">${label}</a>`;
+    });
+
+    document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
   </script>
-
-
-
-
-<footer style="width: 100%; text-align: center; font-size: 14px; color: #888; margin-top: 60px; padding: 20px 0;">
-  จัดทำโดย <a href="https://github.com/dhamsutta/tripitaka" target="_blank">Dhamsutta</a> |
-  <a href="/tripitaka/">หน้าแรก</a>
-</footer>
-
 </body>
-
 </html>
