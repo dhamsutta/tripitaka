@@ -49,6 +49,20 @@
       background: #f9f9f9;
       margin: 0;
       padding: 0;
+      display: flex;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100vh;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      z-index: 1000;
     }
 
     .content {
@@ -58,6 +72,8 @@
       padding: 30px 40px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       border-radius: 8px;
+      margin-left: 260px;
+      flex-grow: 1;
     }
 
     h1, h2, h3 {
@@ -86,6 +102,18 @@
   </style>
 </head>
 <body>
+
+  <div class="sidebar">
+    <h2>เมนู</h2>
+    <ul>
+      <li><a href="/">หน้าแรก</a></li>
+      <li><a href="/tripitaka/">พระไตรปิฎก</a></li>
+      <li><a href="/audio/">ธรรมบรรยาย</a></li>
+      <li><a href="/asubha/">ห้องปลงอสุภะ</a></li>
+      <li><a href="/pakinnaka/">ปกิณกะ</a></li>
+    </ul>
+  </div>
+
   <div class="content">
     <h1>🕯️ หัวข้อหลักของหน้า</h1>
     <p>
@@ -102,5 +130,6 @@
     <hr />
     <p><strong>แท็ก:</strong> พระอภิธรรม, ปรมัตถธรรม, วิปัสสนา</p>
   </div>
+
 </body>
 </html>
