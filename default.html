@@ -27,17 +27,6 @@
       },
 
 
-@keyframes highlight {
-  0%   { background-color: #ffefc5; transform: scale(1.02); }
-  50%  { background-color: #fff3d1; }
-  100% { background-color: transparent; transform: scale(1); }
-},
-
-
-
-
-
-
 
 
     
@@ -70,6 +59,24 @@
     html {
       scroll-behavior: smooth;
     }
+
+
+:target {
+  animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+  0%   { background-color: #fffcb0; }
+  50%  { background-color: #fffcb0; }
+  100% { background-color: transparent; }
+}
+
+
+
+
+
+
+    
 
     body {
       font-family: 'Bai Jamjuree', sans-serif;
