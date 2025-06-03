@@ -44,14 +44,25 @@
                 </div>
 
                 {% if page.sidebar %}
-                <aside class="sidebar-area">
-                    {% for item in page.sidebar %}
-                        {% if item.title %}<h3 class="sidebar-title">{{ item.title }}</h3>{% endif %}
-                        {% if item.html %}{{ item.html }}{% endif %}
-                        {% if item.text %}<p>{{ item.text }}</p>{% endif %}
-                    {% endfor %}
-                </aside>
-                {% endif %}
+               
+                    <aside class="sidebar-area" style="border: 2px solid red; padding: 10px;">
+                        <p style="color: red; font-weight: bold;">-- DEBUG START --</p>
+                        {% if page.sidebar_include %}
+                            <p style="color: green;">page.sidebar_include ถูกตั้งค่าไว้คือ: "{{ page.sidebar_include }}"</p>
+                            {% if page.sidebar_title %}
+                                <h3 class="sidebar-title">{{ page.sidebar_title }}</h3>
+                            {% else %}
+                                <p style="color: orange;">page.sidebar_title ไม่ได้ถูกตั้งค่า</p>
+                            {% endif %}
+                            <p style="color: blue;">กำลังจะ include ไฟล์: {{ page.sidebar_include }}</p>
+                            {% include {{ page.sidebar_include }} %}
+                        {% else %}
+                            <p style="color: red; font-weight: bold;">page.sidebar_include ไม่ได้ถูกตั้งค่า หรือเป็นค่าว่าง!</p>
+                        {% endif %}
+                        <p style="color: red; font-weight: bold;">-- DEBUG END --</p>
+                    </aside>
+                    {% comment %} ----- จบส่วนทดสอบ Sidebar ----- {% endcomment %}
+          
             </div> </div> </main>
 
     <footer class="site-footer">
