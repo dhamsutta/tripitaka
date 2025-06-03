@@ -15,15 +15,12 @@
     {% endif %}
 
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-    </head>
+</head>
 <body>
     <header class="site-header">
         <div class="wrapper">
-            <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | default: "ชื่อเว็บไซต์ของคุณ (ตั้งใน _config.yml)" | escape }}</a>
-
+            <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | default: "ชื่อเว็บไซต์ของคุณ" | escape }}</a>
             <nav class="site-nav">
                 <ul>
                     <li><a href="{{ '/' | relative_url }}">หน้าแรก (ตัวอย่าง)</a></li>
@@ -32,20 +29,38 @@
         </div>
     </header>
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content">
         <div class="wrapper">
-            {{ content }}
-        </div>
-    </main>
+            <div class="layout-container">
+                <div class="main-content-area">
+                    <article class="post">
+                        <header class="post-header">
+                            <h1 class="post-title">{{ page.title | default: "หัวข้อเรื่อง" | escape }}</h1>
+                        </header>
+                        <div class="post-content">
+                            {{ content }}
+                        </div>
+                    </article>
+                </div>
+
+                {% if page.sidebar %}
+                <aside class="sidebar-area">
+                    {% for item in page.sidebar %}
+                        {% if item.title %}<h3 class="sidebar-title">{{ item.title }}</h3>{% endif %}
+                        {% if item.html %}{{ item.html }}{% endif %}
+                        {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+                    {% endfor %}
+                </aside>
+                {% endif %}
+            </div> </div> </main>
 
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> 
-               {{ site.author.name | default: "ผู้จัดทำเว็บไซต์ (ตั้งใน _config.yml)" | escape }}. 
+            <p>&copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
+               {{ site.author.name | default: "ผู้จัดทำเว็บไซต์" | escape }}.
                (ข้อความลิขสิทธิ์หรืออื่นๆ)
             </p>
         </div>
     </footer>
-
-    </body>
+</body>
 </html>
