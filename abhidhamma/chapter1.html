@@ -561,12 +561,11 @@ document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
 <script>
   let dictionary = [];
 
-  // โหลด JSON จาก repo ของคุณ
-  fetch('dictionary/pali-thai.json')
+  fetch('/dictionary/pali-thai.json') // ✅ อ้างจาก root
     .then(response => response.json())
     .then(data => {
       dictionary = data;
-      showRandomSuggestions(); // แสดงคำแนะนำทันทีเมื่อโหลดข้อมูลเสร็จ
+      showRandomSuggestions();
     })
     .catch(err => console.error("โหลดพจนานุกรมไม่สำเร็จ:", err));
 
@@ -591,7 +590,7 @@ document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
     }
 
     resultBox.innerHTML = matches.slice(0, 10).map(entry => {
-      const link = `/tripitaka/abhidhamma/${entry.headword}.html`;
+      const link = `/tripitaka/abhidhamma/${entry.headword}.html`; // ปรับตาม path จริง
       return `<div style="margin-bottom: 0.3rem;">
                 <a href="${link}" target="_blank" style="font-weight: bold; color: #0645ad; text-decoration: none;">
                   ${entry.headword}
@@ -618,6 +617,9 @@ document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
       }).join('');
   }
 </script>
+
+
+
 
 
 
