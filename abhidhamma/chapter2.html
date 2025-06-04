@@ -25,45 +25,9 @@
 
  <style>
 
-.content {
-  max-width: 900px;
-  margin-left: 260px;
-  padding: 30px 40px;
-  width: calc(100% - 260px);
-}
-
-@media (max-width: 1024px) {
-  .content {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.hidden {
-    transform: translateX(0);
-  }
-}
-
-
-    
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-    
-ol.thai-numbered {
-  list-style-type: thai;
-}
-    
     html {
       scroll-behavior: smooth;
     }
-
-
 :target {
   animation: highlight 2s ease-out;
 }
@@ -84,8 +48,6 @@ a.readmore-button:hover {
     padding: 20px 16px;
   }
 }
-
-    
 
 .sidebar ul {
   font-size: 16px;
@@ -126,7 +88,7 @@ a.readmore-button:hover {
       transition: transform 0.3s ease;
     }
 
-    .sidebar.hidden {
+     .sidebar.hidden {
       transform: translateX(-100%);
     }
 
@@ -144,7 +106,7 @@ a.readmore-button:hover {
       box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
     }
 
-    .content {
+  .content {
       max-width: 900px;
       margin: 30px auto;
       background: #fff;
@@ -165,24 +127,10 @@ a.readmore-button:hover {
       scroll-margin-top: 100px;
     }
 
-     .tooltip {
-  border-bottom: 1px dotted #999;
-  cursor: help;
-  position: relative;
-}
-
-.tooltip:hover::after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: #fefefe;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  max-width: 300px;
-  white-space: normal;
-  z-index: 10;
-}
+     .tooltip-term[title] {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+    }
 
     a {
       color: #0645ad;
@@ -199,28 +147,26 @@ a.readmore-button:hover {
       border-top: 1px solid #ccc;
     }
 
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 22px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 50%;
+      background-color: #0645ad;
+      color: white;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
 
-#backToTopBtn {
-  display: none; /* ซ่อนปุ่มไว้ในตอนแรก */
-  position: fixed; /* ทำให้ปุ่มลอยอยู่กับที่เมื่อเลื่อนหน้าจอ */
-  bottom: 30px; /* ระยะห่างจากขอบล่างของหน้าจอ */
-  right: 30px; /* ระยะห่างจากขอบขวาของหน้าจอ */
-  z-index: 999; /* ทำให้ปุ่มอยู่เหนือองค์ประกอบอื่นๆ */
-  font-size: 18px; /* ขนาดตัวอักษร/ไอคอน */
-  border: none; /* ไม่แสดงเส้นขอบ */
-  outline: none; /* ไม่แสดงเส้นกรอบเมื่อถูกโฟกัส */
-  background-color: #0645ad; /* สีพื้นหลังของปุ่ม (ปรับได้ตามต้องการ) */
-  color: white; /* สีตัวอักษร/ไอคอน */
-  cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือเมื่อชี้ */
-  padding: 12px 15px; /* ระยะห่างภายในปุ่ม */
-  border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม (ถ้าต้องการ) หรือปรับค่าอื่นเพื่อให้เป็นสี่เหลี่ยมมน */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* เพิ่มเงาให้ปุ่ม */
-  transition: background-color 0.3s ease; /* เพิ่ม animation ตอนเปลี่ยนสีพื้นหลัง */
-}
-
-#backToTopBtn:hover {
-  background-color: #0b0080; /* สีพื้นหลังเมื่อเมาส์อยู่เหนือปุ่ม (ปรับได้ตามต้องการ) */
-}
+    #backToTopBtn:hover {
+      background-color: #0b0080;
+    }
 
 
 
@@ -230,25 +176,7 @@ a.readmore-button:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+    
 
     @media (max-width: 768px) {
       .content {
