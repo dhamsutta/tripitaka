@@ -207,7 +207,7 @@ a.readmore-button:hover {
   <button class="menu-toggle" onclick="toggleSidebar()">☰ เมนู</button>
 
   <div class="sidebar" id="sidebar">
-    <a href="/tripitaka/" style="display: block; text-align: center; margin-bottom: 20px;">
+    <a href="/" style="display: block; text-align: center; margin-bottom: 20px;">
       <img src="https://github.com/dhamsutta/tripitaka/blob/main/images/logo.png?raw=true"
            alt="โลโก้เว็บไซต์"
            style="max-width: 100px; height: auto;">
@@ -634,11 +634,12 @@ transition: background-color 0.3s ease;
     const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
     let breadcrumbHTML = '';
     let url = '';
-    path.forEach((segment, i) => {
-      url += '/' + segment;
-      const label = labels[segment] || decodeURIComponent(segment);
-      breadcrumbHTML += (i > 0 ? ' › ' : '') + `<a href="${url}">${label}</a>`;
-    });
+    path.forEach((segment) => {
+  const segmentKey = segment.replace('.html', '');
+  url += '/' + segment;
+  const label = labels[segmentKey] || decodeURIComponent(segmentKey);
+  breadcrumbHTML += ' › ' + `<a href="${url}">${label}</a>`;
+});
 
     document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
   </script>
