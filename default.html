@@ -343,6 +343,7 @@ const labels = {
   'tripitaka': 'หน้าแรก',
   'vinaya': 'พระวินัย',
   'sutta': 'พระสูตร',
+'default': 'ทดสอบ',
   'abhidhamma': 'พระอภิธรรม',
   'atthakatha': 'อรรถกถา',
   'visuddhimagga': 'วิสุทธิมรรค',
@@ -364,8 +365,9 @@ const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
 let breadcrumbHTML = `<a href="/tripitaka/">หน้าแรก</a>`; // ✅ เพิ่มตรงนี้
 let url = '';
 path.forEach((segment) => {
+  const segmentKey = segment.replace('.html', '');
   url += '/' + segment;
-  const label = labels[segment] || decodeURIComponent(segment);
+  const label = labels[segmentKey] || decodeURIComponent(segmentKey);
   breadcrumbHTML += ' › ' + `<a href="${url}">${label}</a>`;
 });
 
