@@ -362,7 +362,7 @@ const labels = {
 };
 
 const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
-let breadcrumbHTML = `<a href="/tripitaka/">หน้าแรก</a>`; // ✅ เพิ่มตรงนี้
+let breadcrumbHTML = `<a href="/">หน้าแรก</a>`; // ✅ เพิ่มตรงนี้
 let url = '';
 path.forEach((segment) => {
   const segmentKey = segment.replace('.html', '');
