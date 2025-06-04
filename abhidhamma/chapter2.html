@@ -28,13 +28,17 @@
 
     
 
-.content {
-  max-width: 900px;
-  margin-left: 260px;
-  padding: 30px 40px;
-  width: calc(100% - 260px);
-   overflow-wrap: break-word;
-}
+ .content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      margin-left: 260px;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
 
 @media (max-width: 1024px) {
   .content {
