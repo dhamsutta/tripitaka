@@ -541,12 +541,13 @@ style="float: right; width: 40%; margin-left: 1em; margin-bottom: 1em;"
       'pakinnaka': 'ปกิณกะ',
       'audio': 'ฟังธรรมะออนไลน์',
       'asubha': 'ห้องปลงอสุภะ',
+      'chapter1': 'ปริเฉทที่ ๑',
       'search': 'ค้นหาหัวข้อธรรมะ'
-'chapter1': 'ปริเฉทที่ ๑'
+
     };
 
     const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
-    let breadcrumbHTML = '';
+    let breadcrumbHTML = `<a href="/tripitaka/">หน้าแรก</a>`;
     let url = '';
     path.forEach((segment, i) => {
       url += '/' + segment;
