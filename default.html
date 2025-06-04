@@ -23,42 +23,7 @@
   <!-- Font และสไตล์ -->
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
 
-  <style>
-
-.content {
-  max-width: 900px;
-  margin-left: 260px;
-  padding: 30px 40px;
-  width: calc(100% - 260px);
-}
-
-@media (max-width: 1024px) {
-  .content {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.hidden {
-    transform: translateX(0);
-  }
-}
-
-
-    
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-    
-ol.thai-numbered {
-  list-style-type: thai;
-}
-    
+    <style>
     html {
       scroll-behavior: smooth;
     }
@@ -165,24 +130,10 @@ a.readmore-button:hover {
       scroll-margin-top: 100px;
     }
 
-     .tooltip {
-  border-bottom: 1px dotted #999;
-  cursor: help;
-  position: relative;
-}
-
-.tooltip:hover::after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: #fefefe;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  max-width: 300px;
-  white-space: normal;
-  z-index: 10;
-}
+    .tooltip-term[title] {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+    }
 
     a {
       color: #0645ad;
@@ -219,6 +170,15 @@ a.readmore-button:hover {
     #backToTopBtn:hover {
       background-color: #0b0080;
     }
+
+
+
+
+
+
+
+
+
     
 
     @media (max-width: 768px) {
