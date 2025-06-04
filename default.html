@@ -195,13 +195,7 @@ a.readmore-button:hover {
            alt="โลโก้เว็บไซต์"
            style="max-width: 100px; height: auto;">
     </a>
-📚 ค้นหาศัพท์ธรรมะ
-<input type="text" id="dictSearch" placeholder="พิมพ์คำบาลี เช่น 'vi'" style="width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #ccc;" />
-<div id="dictResults" style="margin-top: 0.75rem; font-size: 0.9rem; color: #444;"></div>
-  <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-    👉 <a href="https://dhammasutta.github.io/dhamma-dictionary/" target="_blank" rel="noopener noreferrer">
-      ดูเต็มหน้าจอ
-    </a>
+
   </p>
     
     <ul>
@@ -211,7 +205,9 @@ a.readmore-button:hover {
       <li><a href="#footer">ท้ายบท</a></li>
     </ul>
   </div>
-
+📚 ค้นหาบาลีแปลไทย
+<input type="text" id="dictSearch" placeholder="พิมพ์คำบาลี..." style="width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #ccc;" />
+<div id="dictResults" style="margin-top: 0.5rem; font-size: 0.85rem; color: #444; max-height: 300px; overflow-y: auto;"></div>
   <div class="content">
 
     <!-- ✅ Breadcrumb แสดงที่เดียว -->
@@ -369,11 +365,11 @@ a.readmore-button:hover {
 <script>
   let dictionary = [];
 
-  // โหลด JSON จาก GitHub
-  fetch('https://raw.githubusercontent.com/Dhammasutta/dhamma-dictionary/main/pali-thai.json')
+  // โหลด JSON จาก repo เดียวกัน ปลอดภัยจาก CORS
+  fetch('/tripitaka/dictionary/pali-thai.json')
     .then(response => response.json())
     .then(data => dictionary = data)
-    .catch(err => console.error("ไม่สามารถโหลดพจนานุกรม:", err));
+    .catch(err => console.error("โหลดพจนานุกรมไม่สำเร็จ:", err));
 
   document.getElementById('dictSearch').addEventListener('input', function () {
     const query = this.value.trim().toLowerCase();
@@ -384,23 +380,26 @@ a.readmore-button:hover {
       return;
     }
 
-    // ค้นหาคำที่ขึ้นต้นด้วย query
-    const matches = dictionary.filter(entry => entry.pali.toLowerCase().startsWith(query));
+    // ค้นหาทั้งคำขึ้นต้นและคำที่มีอยู่ในคำ
+    const matches = dictionary.filter(entry =>
+      entry.pali.toLowerCase().includes(query)
+    );
 
     if (matches.length === 0) {
-      resultBox.innerHTML = `ไม่พบคำที่ขึ้นต้นด้วย "<strong>${query}</strong>"`;
+      resultBox.innerHTML = `ไม่พบคำว่า "<strong>${query}</strong>"`;
       return;
     }
 
-    // แสดงผลรายการทั้งหมดที่พบ พร้อมลิงก์
+    // จำกัดผลลัพธ์ไม่เกิน 10 รายการ
     resultBox.innerHTML = matches.slice(0, 10).map(entry => {
       const link = `/tripitaka/abhidhamma/${entry.pali}.html`;
-      return `<div style="margin-bottom: 0.5rem;">
-                <a href="${link}" style="font-weight: bold; color: #0645ad;">${entry.pali}</a>: ${entry.thai}
+      return `<div style="margin-bottom: 0.3rem;">
+                <a href="${link}" style="font-weight: bold; color: #0645ad; text-decoration: none;" target="_blank">${entry.pali}</a>: ${entry.thai}
               </div>`;
     }).join('');
   });
 </script>
+
 
 
 
