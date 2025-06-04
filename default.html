@@ -144,10 +144,24 @@ a.readmore-button:hover {
       scroll-margin-top: 100px;
     }
 
-    .tooltip-term[title] {
-      border-bottom: 1px dotted #888;
-      cursor: help;
-    }
+     .tooltip {
+  border-bottom: 1px dotted #999;
+  cursor: help;
+  position: relative;
+}
+
+.tooltip:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fefefe;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  white-space: normal;
+  z-index: 10;
+}
 
     a {
       color: #0645ad;
