@@ -339,36 +339,38 @@ a.readmore-button:hover {
     }
 
     // ✅ Breadcrumb อัตโนมัติ
-    const labels = {
-      'tripitaka': 'หน้าแรก',
-      'vinaya': 'พระวินัย',
-      'sutta': 'พระสูตร',
-      'abhidhamma': 'พระอภิธรรม',
-      'atthakatha': 'อรรถกถา',
-      'visuddhimagga': 'วิสุทธิมรรค',
-      'nettippakarana': 'เนตติปกรณ์',
-      'buddhadhamma': 'พุทธธรรม',
-      'milindapanha': 'มิลินทปัญหา',
-      'dictionary': 'คำอภิธานศัพท์',
-      'pali-thai': 'พจนานุกรม บาลี-ไทย',
-      'thai-eng': 'ไทย-อังกฤษ',
-      'eng-thai': 'อังกฤษ-ไทย',
-      'pakinnaka': 'ปกิณกะ',
-      'audio': 'ฟังธรรมะออนไลน์',
-      'asubha': 'ห้องปลงอสุภะ',
-      'search': 'ค้นหาหัวข้อธรรมะ'
-    };
+const labels = {
+  'tripitaka': 'หน้าแรก',
+  'vinaya': 'พระวินัย',
+  'sutta': 'พระสูตร',
+  'abhidhamma': 'พระอภิธรรม',
+  'atthakatha': 'อรรถกถา',
+  'visuddhimagga': 'วิสุทธิมรรค',
+  'nettippakarana': 'เนตติปกรณ์',
+  'buddhadhamma': 'พุทธธรรม',
+  'milindapanha': 'มิลินทปัญหา',
+  'dictionary': 'คำอภิธานศัพท์',
+  'pali-thai': 'พจนานุกรม บาลี-ไทย',
+  'thai-eng': 'ไทย-อังกฤษ',
+  'eng-thai': 'อังกฤษ-ไทย',
+  'pakinnaka': 'ปกิณกะ',
+  'audio': 'ฟังธรรมะออนไลน์',
+  'asubha': 'ห้องปลงอสุภะ',
+  'search': 'ค้นหาหัวข้อธรรมะ',
+  'chapter1': 'ปริเฉทที่ ๑'
+};
 
-    const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
-    let breadcrumbHTML = '';
-    let url = '';
-    path.forEach((segment, i) => {
-      url += '/' + segment;
-      const label = labels[segment] || decodeURIComponent(segment);
-      breadcrumbHTML += (i > 0 ? ' › ' : '') + `<a href="${url}">${label}</a>`;
-    });
+const path = location.pathname.split('/').filter(p => p && p !== 'index.html');
+let breadcrumbHTML = `<a href="/tripitaka/">หน้าแรก</a>`; // ✅ เพิ่มตรงนี้
+let url = '';
+path.forEach((segment) => {
+  url += '/' + segment;
+  const label = labels[segment] || decodeURIComponent(segment);
+  breadcrumbHTML += ' › ' + `<a href="${url}">${label}</a>`;
+});
 
-    document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
+document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
+
   </script>
 <script>
   let dictionary = [];
