@@ -24,6 +24,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
 
   <style>
+
+<style>
+  .tags a {
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 6px 12px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+  }
+  .tags a:hover {
+    background: #e0e7ff;
+    color: #1d4ed8;
+  }
+</style>
+
+
+
+
+
+    
     html {
       scroll-behavior: smooth;
     }
@@ -217,8 +239,13 @@ a.readmore-button:hover {
   
 
     <!-- ✅ Google Search -->
-    <script async src="https://cse.google.com/cse.js?cx=51c4343b3eeb842d6"></script>
+
+ <script async src="https://cse.google.com/cse.js?cx=51c4343b3eeb842d6"></script>
     <div class="gcse-search"></div>
+
+
+
+    
 <!-- Structured Data (Breadcrumb for SEO) -->
   <script type="application/ld+json">
   {
@@ -358,6 +385,19 @@ style="float: right; width: 40%; margin-left: 1em; margin-bottom: 1em;"
   <button onclick="scrollToTop()" id="backToTopBtn" title="กลับด้านบน">⬆️</button>
 
   <footer style="width: 100%; text-align: center; font-size: 14px; color: #888; margin-top: 60px; padding: 20px 0;">
+
+<div class="tags">
+  <strong>แท็ก:</strong>
+  <a href="#" onclick="showPosts('พระอภิธรรม')">พระอภิธรรม</a>
+  <a href="#" onclick="showPosts('พระวินัย')">พระวินัย</a>
+  <a href="#" onclick="showPosts('พระสูตร')">พระสูตร</a>
+</div>
+
+<div id="post-list" style="margin-top: 1.5rem;"></div>
+
+
+
+    
     จัดทำโดย <a href="https://github.com/dhamsutta/tripitaka" target="_blank">Dhamsutta</a> |
     <a href="/tripitaka/">หน้าแรก</a>
   </footer>
@@ -485,6 +525,34 @@ style="float: right; width: 40%; margin-left: 1em; margin-bottom: 1em;"
   }
 </script>
 
+<script>
+  const postsByTag = {
+    "พระอภิธรรม": [
+      { title: "ปรมัตถธรรมคืออะไร", url: "/tripitaka/abhidhamma/paramattha.html" },
+      { title: "เจตสิก 52", url: "/tripitaka/abhidhamma/cetasika.html" }
+    ],
+    "พระวินัย": [
+      { title: "ปาราชิก 4", url: "/tripitaka/vinaya/parajika.html" }
+    ],
+    "พระสูตร": [
+      { title: "ธัมมจักกัปปวัตตนสูตร", url: "/tripitaka/sutta/dhammacakkappavattana.html" }
+    ]
+  };
+
+  function showPosts(tag) {
+    const posts = postsByTag[tag] || [];
+    const container = document.getElementById('post-list');
+    if (posts.length === 0) {
+      container.innerHTML = `<p>ยังไม่มีบทความในหมวด <strong>${tag}</strong></p>`;
+      return;
+    }
+    container.innerHTML = `
+      <h4>📘 บทความในหมวด <strong>${tag}</strong>:</h4>
+      <ul>
+        ${posts.map(post => `<li><a href="${post.url}">${post.title}</a></li>`).join("")}
+      </ul>`;
+  }
+</script>
 
 
 
