@@ -23,36 +23,24 @@
   <!-- Font และสไตล์ -->
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
 
-  <style>
+ <style>
 
+.content {
+  max-width: 900px;
+  margin-left: 260px;
+  padding: 30px 40px;
+  width: calc(100% - 260px);
+}
 
-    
-
- .content {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 30px 40px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 8px;
-      margin-left: 260px;
-      flex-grow: 1;
-      transition: margin-left 0.3s ease;
-    }
-
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
   .content {
     margin-left: 0;
-    max-width: 100%;
-    padding: 20px;
+    width: 100%;
   }
 
   .sidebar {
-    position: relative;
-    width: 100%;
+    transform: translateX(-100%);
   }
-}
-
 
   .sidebar.hidden {
     transform: translateX(0);
@@ -60,10 +48,6 @@
 }
 
 
-
-
-
-    
     
 .clearfix::after {
   content: "";
@@ -101,14 +85,7 @@ a.readmore-button:hover {
   }
 }
 
-  .float-image {
-  float: right;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  max-width: 280px; /* หรือ 33% ก็ได้ */
-  width: 100%;
-  height: auto;
-}  
+    
 
 .sidebar ul {
   font-size: 16px;
@@ -168,13 +145,16 @@ a.readmore-button:hover {
     }
 
     .content {
-  box-sizing: border-box;
-  margin-left: 260px;
-  width: calc(100% - 260px);
-  padding: 30px 40px;
-  max-width: 100%; /* ล็อกไว้ไม่ให้เกินขอบ */
-}
-
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      margin-left: 260px;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
 
     .sidebar.hidden ~ .content {
       margin-left: 30px;
@@ -185,7 +165,7 @@ a.readmore-button:hover {
       scroll-margin-top: 100px;
     }
 
-  .tooltip {
+     .tooltip {
   border-bottom: 1px dotted #999;
   cursor: help;
   position: relative;
@@ -203,7 +183,6 @@ a.readmore-button:hover {
   white-space: normal;
   z-index: 10;
 }
-
 
     a {
       color: #0645ad;
