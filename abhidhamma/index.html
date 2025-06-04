@@ -644,22 +644,26 @@ transition: background-color 0.3s ease;
 <script>
   let dictionary = [];
 
-  // โหลด JSON จาก repo ของคุณ (อยู่ในไดเรกทอรีเดียวกันกับ index.html)
+  // โหลด JSON จาก repo ของคุณ
   fetch('/tripitaka/dictionary/pali-thai.json')
     .then(response => response.json())
-    .then(data => dictionary = data)
+    .then(data => {
+      dictionary = data;
+      showRandomSuggestions(); // แสดงคำแนะนำทันทีเมื่อโหลดข้อมูลเสร็จ
+    })
     .catch(err => console.error("โหลดพจนานุกรมไม่สำเร็จ:", err));
 
-  document.getElementById('dictSearch').addEventListener('input', function () {
-    const query = this.value.trim().toLowerCase();
-    const resultBox = document.getElementById('dictResults');
+  const searchInput = document.getElementById('dictSearch');
+  const resultBox = document.getElementById('dictResults');
 
-    if (!query) {
-      resultBox.innerHTML = '';
+  searchInput.addEventListener('input', function () {
+    const query = this.value.trim().toLowerCase();
+
+    if (query.length === 0) {
+      showRandomSuggestions();
       return;
     }
 
-    // ค้นหาคำที่มี query ปรากฏอยู่ใน headword
     const matches = dictionary.filter(entry =>
       entry.headword.toLowerCase().includes(query)
     );
@@ -669,17 +673,35 @@ transition: background-color 0.3s ease;
       return;
     }
 
-    // แสดงไม่เกิน 10 รายการ พร้อมลิงก์สมมุติ
     resultBox.innerHTML = matches.slice(0, 10).map(entry => {
-      const link = `/tripitaka/abhidhamma/${entry.headword}.html`; // ลิงก์ไปยังบทความถ้ามี
-      return `<div style="margin-bottom: 0.5rem;">
+      const link = `/tripitaka/abhidhamma/${entry.headword}.html`;
+      return `<div style="margin-bottom: 0.3rem;">
                 <a href="${link}" target="_blank" style="font-weight: bold; color: #0645ad; text-decoration: none;">
                   ${entry.headword}
                 </a>: ${entry.content}
               </div>`;
     }).join('');
   });
+
+  function showRandomSuggestions() {
+    if (!dictionary.length) return;
+
+    const randomSuggestions = dictionary
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+
+    resultBox.innerHTML = `<div style="color:#888; margin-bottom: 0.25rem;">🔎 ตัวอย่างคำศัพท์:</div>` +
+      randomSuggestions.map(entry => {
+        const link = `/tripitaka/abhidhamma/${entry.headword}.html`;
+        return `<div style="margin-bottom: 0.3rem;">
+                  <a href="${link}" target="_blank" style="font-weight: bold; color: #0645ad; text-decoration: none;">
+                    ${entry.headword}
+                  </a>: ${entry.content}
+                </div>`;
+      }).join('');
+  }
 </script>
+
 
 
 
