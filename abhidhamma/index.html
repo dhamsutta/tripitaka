@@ -649,7 +649,7 @@ transition: background-color 0.3s ease;
   let dictionary = [];
 
   // โหลด JSON จาก repo ของคุณ
-  fetch('/tripitaka/dictionary/pali-thai.json')
+  fetch('dictionary/pali-thai.json')
     .then(response => response.json())
     .then(data => {
       dictionary = data;
