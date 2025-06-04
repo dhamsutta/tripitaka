@@ -363,11 +363,10 @@ a.readmore-button:hover {
 
     document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
   </script>
-
 <script>
   let dictionary = [];
 
-  // โหลด JSON จาก repo เดียวกัน ปลอดภัยจาก CORS
+  // โหลด JSON จาก repo ของคุณ (อยู่ในไดเรกทอรีเดียวกันกับ index.html)
   fetch('/tripitaka/dictionary/pali-thai.json')
     .then(response => response.json())
     .then(data => dictionary = data)
@@ -377,14 +376,14 @@ a.readmore-button:hover {
     const query = this.value.trim().toLowerCase();
     const resultBox = document.getElementById('dictResults');
 
-    if (query.length === 0) {
+    if (!query) {
       resultBox.innerHTML = '';
       return;
     }
 
-    // ค้นหาทั้งคำขึ้นต้นและคำที่มีอยู่ในคำ
+    // ค้นหาคำที่มี query ปรากฏอยู่ใน headword
     const matches = dictionary.filter(entry =>
-      entry.pali.toLowerCase().includes(query)
+      entry.headword.toLowerCase().includes(query)
     );
 
     if (matches.length === 0) {
@@ -392,15 +391,18 @@ a.readmore-button:hover {
       return;
     }
 
-    // จำกัดผลลัพธ์ไม่เกิน 10 รายการ
+    // แสดงไม่เกิน 10 รายการ พร้อมลิงก์สมมุติ
     resultBox.innerHTML = matches.slice(0, 10).map(entry => {
-      const link = `/tripitaka/abhidhamma/${entry.pali}.html`;
-      return `<div style="margin-bottom: 0.3rem;">
-                <a href="${link}" style="font-weight: bold; color: #0645ad; text-decoration: none;" target="_blank">${entry.pali}</a>: ${entry.thai}
+      const link = `/tripitaka/abhidhamma/${entry.headword}.html`; // ลิงก์ไปยังบทความถ้ามี
+      return `<div style="margin-bottom: 0.5rem;">
+                <a href="${link}" target="_blank" style="font-weight: bold; color: #0645ad; text-decoration: none;">
+                  ${entry.headword}
+                </a>: ${entry.content}
               </div>`;
     }).join('');
   });
 </script>
+
 
 
 
