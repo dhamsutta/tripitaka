@@ -40,15 +40,19 @@
       transition: margin-left 0.3s ease;
     }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .content {
     margin-left: 0;
-    width: 100%;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .sidebar {
-    transform: translateX(-100%);
+    position: relative;
+    width: 100%;
   }
+}
+
 
   .sidebar.hidden {
     transform: translateX(0);
