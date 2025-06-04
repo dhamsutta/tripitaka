@@ -226,6 +226,16 @@ a.readmore-button:hover {
       <li><a href="#section09">หมวดที่ ๐๙ สมถกรรมฐาน</a></li>
 <li><a href="#section10">หมวดที่ ๑๐ วิปัสสนากรรมฐาน</a></li>
     </ul>
+
+ <hr />
+ <!-- ✅ กล่องค้นหา ใส่ตรงนี้ -->
+  <h4 style="margin-top: 1.5rem;">📚 ค้นหาศัพท์บาลี</h4>
+  <input type="text" id="dictSearch" placeholder="พิมพ์คำบาลี..." style="width: 100%; padding: 6px; border-radius: 6px; border: 1px solid #ccc;" />
+  <div id="dictResults" style="margin-top: 0.5rem; font-size: 0.85rem; color: #444; max-height: 300px; overflow-y: auto;"></div>
+
+
+
+    
   </div>
 
   <div class="content">
@@ -629,6 +639,53 @@ transition: background-color 0.3s ease;
 
     document.getElementById("breadcrumb").innerHTML = breadcrumbHTML;
   </script>
+
+
+<script>
+  let dictionary = [];
+
+  // โหลด JSON จาก repo ของคุณ (อยู่ในไดเรกทอรีเดียวกันกับ index.html)
+  fetch('/tripitaka/dictionary/pali-thai.json')
+    .then(response => response.json())
+    .then(data => dictionary = data)
+    .catch(err => console.error("โหลดพจนานุกรมไม่สำเร็จ:", err));
+
+  document.getElementById('dictSearch').addEventListener('input', function () {
+    const query = this.value.trim().toLowerCase();
+    const resultBox = document.getElementById('dictResults');
+
+    if (!query) {
+      resultBox.innerHTML = '';
+      return;
+    }
+
+    // ค้นหาคำที่มี query ปรากฏอยู่ใน headword
+    const matches = dictionary.filter(entry =>
+      entry.headword.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      resultBox.innerHTML = `ไม่พบคำว่า "<strong>${query}</strong>"`;
+      return;
+    }
+
+    // แสดงไม่เกิน 10 รายการ พร้อมลิงก์สมมุติ
+    resultBox.innerHTML = matches.slice(0, 10).map(entry => {
+      const link = `/tripitaka/abhidhamma/${entry.headword}.html`; // ลิงก์ไปยังบทความถ้ามี
+      return `<div style="margin-bottom: 0.5rem;">
+                <a href="${link}" target="_blank" style="font-weight: bold; color: #0645ad; text-decoration: none;">
+                  ${entry.headword}
+                </a>: ${entry.content}
+              </div>`;
+    }).join('');
+  });
+</script>
+
+
+
+
+
+  
   
 </body>
 </html>
